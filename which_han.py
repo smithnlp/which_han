@@ -106,7 +106,7 @@ def check_yue(text):
     for token, info in yue_vernacular_dict.items():
         m = re.search(r'(.{0,5})' + token + r'(.{0,5})', text)
         if m:
-            print("Yue dialect detected!\t\t", m.group(1), "__", token, "__", m.group(2))
+            print("Yue dialect detected!\t", m.group(1), "__", token, "__", m.group(2), "|", token, "is pronounced", "'" + info[0] + "'", "and can function like", info[1], "in Mandarin.")
             status = True
     return status
 
@@ -138,12 +138,12 @@ def check_wu(text):
         for i in info[1]:
             m = re.search(r'(.{0,5})' + i + r'(.{0,5})', text)
             if m:
-                print("Wu dialect detected!\t\t", m.group(1), "__", i, "__", m.group(2))
+                print("Wu dialect detected!\t", m.group(1), "__", i, "__", m.group(2), "|", i, "is pronounced", "'" + info[0] + "'", "and can function like", token, "in Mandarin.")
                 status = True
     for token, info in wu_vernacular_triggers.items():
         m = re.search(r'(.{0,5})' + token + r'(.{0,5})', text)
         if m:
-            print("Wu dialect detected!\t\t", m.group(1), "__", token, "__", m.group(2))
+            print("Wu dialect detected!\t\t", m.group(1), "__", token, "__", m.group(2), "|", token, "is pronounced", "'" + info[0] + "'", "and means", info[1], "or", info[2], "in Mandarin.")
             status = True
     return status
 
