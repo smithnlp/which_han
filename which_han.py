@@ -149,7 +149,7 @@ def check_wu(text):
 
 
 def main():
-    """Take some string of Hanzi characters submitted by the user check for
+    """Take some string of Hanzi characters submitted by the user  & check for
     dialect traits.
     """
     print('\n')
